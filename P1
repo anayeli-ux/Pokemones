@@ -1,0 +1,84 @@
+using System;
+
+namespace pokemonejemplo
+{
+    public class Pokemon
+    {
+        public string Nombre { get; set; }
+        public string Tipo { get; set; }
+        public string Nivel { get; set; }
+        public int NivelDePoder { get; set; }
+        public int NivelDeDefensa { get; set; }
+        public string Color { get; set; }
+
+        public Pokemon(string nombre, string tipo, string nivel)
+        {
+            Nombre = nombre;
+            Tipo = tipo;
+            Nivel = nivel;
+        }
+
+        public void AtributosPokemon(int niveldepoder, int nivelDeDefensa, string color)
+        {
+            NivelDePoder = niveldepoder;
+            NivelDeDefensa = nivelDeDefensa;
+            Color = color;
+        }
+
+        public void Atacar()
+        {
+            Console.WriteLine($"{Nombre} lanzó impactrueno");
+        }
+
+        public void Evolucionar()
+        {
+            Console.WriteLine($"{Nombre} evoluciono a:");
+        }
+
+        public void Defender()
+        {
+            Console.WriteLine($"{Nombre} se defendión. Nivel de defensa: {NivelDeDefensa}, Color: {Color}");
+        }
+
+        public void Combatir()
+        {
+            Console.WriteLine($"{Nombre combate. Nivel de poder: {NivelDePoder}, Ataque: {Tipo}");
+        }
+
+        public void Comer()
+        {
+            Console.WriteLine($"{Nombre} está comiendo un pastel");
+        }
+
+        public void Dormir()
+        {
+            Console.WriteLine($"{Nombre} está dormido");
+        }
+
+        public void SubirDeNivel()
+        {
+            Console.WriteLine($"{Nombre} subió de nivel");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Pokemon Objeto1 = new Pokemon("Pikachu", "Eléctrico", "Clásico");
+            Pokemon Objeto2 = new Pokemon("Charizard", "Fuego", "Legendario");
+            Pokemon Objeto3 = new Pokemon("Cubone", "pendiente", "Raro");
+
+            Objeto1.AtributosPokemon(50, 40, "Amarillo");
+            Objeto2.AtributosPokemon(60, 45, "Naranja");
+            Objeto3.AtributosPokemon(55, 50, "Morado");
+
+            Objeto1.Combatir();
+            Objeto1.Defender();
+            Objeto2.Combatir();
+            Objeto2.Defender();
+            Objeto3.Combatir();
+            Objeto3.Defender();
+        }
+    }
+}
